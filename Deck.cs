@@ -12,6 +12,19 @@ namespace DeckOfCards
 
         public void Create()
         {
+            if (cards.Count > 0)
+            {
+                Console.WriteLine("A deck already exists! Creating a new one will replace the current deck.");
+                Console.Write("Do you want to proceed? (yes/no): ");
+                string response = (Console.ReadLine()?.Trim().ToLower()) ?? string.Empty; // Use a fallback empty string if null
+
+                if (response != "yes")
+                {
+                    Console.WriteLine("Deck creation canceled.");
+                    return;
+                }
+            }
+
             cards.Clear();
             List<Card> deckList = new List<Card>();
 
@@ -33,14 +46,16 @@ namespace DeckOfCards
         }
 
 
+
+
         public void Shuffle(int count)
         {
-            
+
         }
 
         public void Deal(int count)
         {
-            
+
         }
 
         public void Display()
