@@ -24,13 +24,15 @@ namespace DeckOfCards
                         deck.Create();
                         break;
                     case "2":
+                    
+                        // refer to Deck.cs
                         // deck.Shuffle();
                         break;
                     case "3":
                         Console.Write("Enter number of cards to deal: ");
                         if (int.TryParse(Console.ReadLine(), out int count))
                         {
-                            //wla pani na confirm if it should behave the way it is HJDKSVBKHDSV
+                            // refer to Deck.cs
                             //deck.Deal(count); 
                         }
                         else

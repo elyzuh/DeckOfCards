@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace DeckOfCards
 {
@@ -32,26 +33,14 @@ namespace DeckOfCards
         }
 
 
+        public void Shuffle(int count)
+        {
+            
+        }
 
         public void Deal(int count)
         {
-            if (cards.Count == 0)
-            {
-                Console.WriteLine("Deck is empty!");
-                return;
-            }
-
-            if (count > cards.Count)
-            {
-                Console.WriteLine($"Only {cards.Count} cards left. Dealing all remaining cards.");
-                count = cards.Count;
-            }
-
-            Console.WriteLine("Dealt Cards:");
-            for (int i = 0; i < count; i++)
-            {
-                Console.WriteLine(cards.Pop());
-            }
+            
         }
 
         public void Display()
