@@ -31,31 +31,7 @@ namespace DeckOfCards
             Console.WriteLine("Deck created with 52 cards.");
         }
 
-        public void Shuffle()
-        {
-            if (cards.Count == 0)
-            {
-                Console.WriteLine("Deck is empty!");
-                return;
-            }
 
-            var deckArray = cards.ToArray();
-            Random rng = new Random();
-            int n = deckArray.Length;
-            for (int i = n - 1; i > 0; i--)
-            {
-                int j = rng.Next(i + 1);
-                (deckArray[i], deckArray[j]) = (deckArray[j], deckArray[i]);
-            }
-
-            cards.Clear();
-            foreach (var card in deckArray)
-            {
-                cards.Push(card);
-            }
-
-            Console.WriteLine("Deck shuffled.");
-        }
 
         public void Deal(int count)
         {
