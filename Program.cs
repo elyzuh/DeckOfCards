@@ -30,7 +30,8 @@ namespace DeckOfCards
                         Console.Write("Enter number of cards to deal: ");
                         if (int.TryParse(Console.ReadLine(), out int count))
                         {
-                            deck.Deal(count);
+                            //wla pani na confirm if it should behave the way it is HJDKSVBKHDSV
+                            //deck.Deal(count); 
                         }
                         else
                         {
