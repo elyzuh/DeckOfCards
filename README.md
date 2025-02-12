@@ -1,4 +1,4 @@
-# Project Name
+# Deck Of Cards
 
 ## Description
 A deck of cards C# application.
