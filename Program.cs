@@ -24,7 +24,7 @@ namespace DeckOfCards
                         deck.Create();
                         break;
                     case "2":
-                        deck.Shuffle();
+                        // deck.Shuffle();
                         break;
                     case "3":
                         Console.Write("Enter number of cards to deal: ");
