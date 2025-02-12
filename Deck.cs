@@ -7,7 +7,7 @@ namespace DeckOfCards
     {
         private Stack<Card> cards = new Stack<Card>();
         private static readonly string[] Suits = { "Cloves", "Diamond", "Heart", "Spade" };
-        private static readonly string[] Ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Ace", "Jack", "Queen", "King" };
+        private static readonly string[] Ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace" };
 
         public void Create()
         {
@@ -22,7 +22,6 @@ namespace DeckOfCards
                 }
             }
 
-            // Push all cards into the stack in order
             deckList.Reverse();
             foreach (var card in deckList)
             {
@@ -34,6 +33,12 @@ namespace DeckOfCards
 
         public void Shuffle()
         {
+            if (cards.Count == 0)
+            {
+                Console.WriteLine("Deck is empty!");
+                return;
+            }
+
             var deckArray = cards.ToArray();
             Random rng = new Random();
             int n = deckArray.Length;
@@ -54,10 +59,16 @@ namespace DeckOfCards
 
         public void Deal(int count)
         {
+            if (cards.Count == 0)
+            {
+                Console.WriteLine("Deck is empty!");
+                return;
+            }
+
             if (count > cards.Count)
             {
-                Console.WriteLine("Not enough cards in the deck.");
-                return;
+                Console.WriteLine($"Only {cards.Count} cards left. Dealing all remaining cards.");
+                count = cards.Count;
             }
 
             Console.WriteLine("Dealt Cards:");
@@ -69,11 +80,17 @@ namespace DeckOfCards
 
         public void Display()
         {
-            Console.WriteLine($"Cards Remaining: {cards.Count}");
+            if (cards.Count == 0)
+            {
+                Console.WriteLine("Deck is empty!");
+                return;
+            }
+
             foreach (var card in cards)
             {
                 Console.WriteLine(card);
             }
+            Console.WriteLine($"Cards Remaining: {cards.Count}");
         }
     }
 }
