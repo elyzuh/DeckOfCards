@@ -24,16 +24,22 @@ namespace DeckOfCards
                         deck.Create();
                         break;
                     case "2":
-                    
-                        // refer to Deck.cs
-                        // deck.Shuffle();
+                        Console.Write("Enter number of shuffles: ");
+                        if (int.TryParse(Console.ReadLine(), out int shuffleCount))
+                        {
+                            deck.Shuffle(shuffleCount);  // Ensure Shuffle method exists with an int parameter
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid number.");
+                        }
                         break;
                     case "3":
                         Console.Write("Enter number of cards to deal: ");
                         if (int.TryParse(Console.ReadLine(), out int count))
                         {
                             // refer to Deck.cs
-                            //deck.Deal(count); 
+                         deck.Deal(count); 
                         }
                         else
                         {
